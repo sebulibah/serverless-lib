@@ -1,0 +1,21 @@
+{
+  "name": "serverless-lib",
+  "version": "1.0.0",
+  "description": "Serveless Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hannah Sebuliba",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.886.0",
+    "body-parser": "^1.19.0",
+    "serverless": "^1.74.1"
+  },
+  "devDependencies": {
+    "serverless-dynamodb-local": "^0.2.39",
+    "serverless-ignore": "^0.1.6",
+    "serverless-offline": "^6.9.0"
+  }
+}
