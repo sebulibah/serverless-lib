@@ -1,21 +1,31 @@
 {
-  "name": "serverless-lib",
-  "version": "1.0.0",
-  "description": "Serveless Library",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Hannah Sebuliba",
-  "license": "ISC",
-  "dependencies": {
-    "aws-sdk": "^2.886.0",
-    "body-parser": "^1.19.0",
-    "serverless": "^1.74.1"
-  },
-  "devDependencies": {
-    "serverless-dynamodb-local": "^0.2.39",
-    "serverless-ignore": "^0.1.6",
-    "serverless-offline": "^6.9.0"
-  }
+    "name": "serverless-lib",
+    "version": "1.0.0",
+    "description": "Serveless Library",
+    "author": "Hannah Sebuliba",
+    "license": "ISC",
+    "dependencies": {
+        "@types/node": "^14.14.41",
+        "aws-sdk": "^2.888.0",
+        "axios": "^0.21.1",
+        "body-parser": "^1.19.0",
+        "jsonwebtoken": "^8.5.1",
+        "middy": "^0.36.0",
+        "serverless": "^1.74.1",
+        "ts-loader": "^8.1.0",
+        "uuid": "^8.3.2",
+        "webpack": "^5.33.2",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "serverless-aws-documentation": "^1.1.0",
+        "serverless-dynamodb-local": "^0.2.39",
+        "serverless-iam-roles-per-function": "^3.1.0",
+        "serverless-ignore": "^0.1.6",
+        "serverless-offline": "^6.9.0",
+        "serverless-plugin-canary-deployments": "^0.6.0",
+        "serverless-reqvalidator-plugin": "^1.0.4",
+        "serverless-webpack": "^5.4.1",
+        "typescript": "^4.2.4"
+    }
 }
