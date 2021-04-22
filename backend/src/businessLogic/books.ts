@@ -28,7 +28,7 @@ export async function createBook(
     return book
 }
 
-export async function getAllBooks(event: APIGatewayProxyEvent): Promise<BookItem>{
+export async function getAllBooks(event: APIGatewayProxyEvent): Promise<BookItem[]>{
     const userId = getUserId(event)
     return await bookAccess.getAllBooks(userId)
 }
@@ -49,7 +49,6 @@ export async function updateBook(
         read: updateBookRequest.read
     })
 }
-
 
 export async function deleteBook(
     bookId: string,

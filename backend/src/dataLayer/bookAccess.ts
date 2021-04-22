@@ -35,7 +35,7 @@ export class BookAccess {
         return newBook
     }
     
-    async getAllBooks(userId: string): Promise<BookItem>{
+    async getAllBooks(userId: string): Promise<BookItem[]>{
         logger.info(`Getting all books for user: ${userId}`)
 
         const result = await this.docClient.query({
