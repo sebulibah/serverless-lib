@@ -1,8 +1,5 @@
 import * as AWS from 'aws-sdk'
-import * as AWSXRay from 'aws-xray-sdk'
 import { DocumentClient } from 'aws-sdk/clients/dynamodb'
-const XAWS = AWSXRay.captureAWS(AWS)
-
 import { createLogger } from '../utils/logger'
 import { BookItem } from '../models/BookItem'
 //import { BookUpdate } from '../models/BookUpdate'
@@ -12,7 +9,7 @@ const logger = createLogger('book-access')
 export class BookAccess {
     constructor(
         private readonly docClient: DocumentClient = createDynamoDBClient(),
-        private readonly s3 = new XAWS.S3({ signatureVersion: 'v4' }),
+        private readonly s3 = new AWS.S3({ signatureVersion: 'v4' }),
         private readonly booksTable = process.env.BOOKS_TABLE,
         private readonly bucketName = process.env.S3_BUCKET,
         private readonly indexName = process.env.INDEX_NAME
@@ -112,5 +109,5 @@ export class BookAccess {
 
 
 const createDynamoDBClient = () => {
-    return new XAWS.DynamoDB.DocumentClient()
+    return new AWS.DynamoDB.DocumentClient()
 }
