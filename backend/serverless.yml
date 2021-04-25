@@ -9,9 +9,6 @@ plugins:
   - serverless-webpack
   - serverless-iam-roles-per-function
   - serverless-reqvalidator-plugin
-  - serverless-aws-documentation
-  - serveless-offline
-  - serverless-dynamodb-local
 
 provider:
   name: aws
@@ -25,15 +22,6 @@ provider:
     INDEX_NAME: index-${self:provider.stage}
     S3_BUCKET: serverless-booklib-rdstr-${self:provider.stage}
     JWKS_URL: 'https://sebulibah-dev.us.auth0.com/.well-known/jwks.json'
-
-# you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
 
 
 functions:
@@ -114,6 +102,7 @@ functions:
       - Effect: Allow
         Action:
           - s3:PutObject
+          - s3:GetObject
         Resource: arn:aws:s3:::${self:provider.environment.S3_BUCKET}/*
 
 
