@@ -22,7 +22,7 @@ export async function createBook(
         createdAt: new Date().toISOString(),
         title: createBookRequest.title,
         dueDate: createBookRequest.dueDate,
-        read: false
+        completed: false
     }
     await bookAccess.createBook(book)
     return book
@@ -46,7 +46,7 @@ export async function updateBook(
         createdAt: new Date().toISOString(),
         title: updateBookRequest.title,
         dueDate: updateBookRequest.dueDate,
-        read: updateBookRequest.read
+        completed: updateBookRequest.completed
     })
 }
 

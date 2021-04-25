@@ -57,7 +57,7 @@ export class BookAccess {
     async updateBook(book: BookItem): Promise<BookItem>{
         logger.info(`Updating book: ${book.title}`)
 
-        const updateExpression = 'set #t = :title, dueDate = :dueDate, read = :read'
+        const updateExpression = 'set title = :title, dueDate = :dueDate, completed = :completed'
 
         await this.docClient.update({
             TableName: this.booksTable,
@@ -70,8 +70,10 @@ export class BookAccess {
             ExpressionAttributeValues: {
                 ':title': book.title,
                 ':dueDate': book.dueDate,
-                ':read': book.read,
+                ':completed': book.completed,
+                ":bookId": book.bookId
             },
+            ReturnValues: 'UPDATED_NEW'
         })
         .promise()
         logger.info(`Updated book: ${book.bookId}`)

@@ -4,6 +4,6 @@ export interface BookItem {
     createdAt: string
     title: string
     dueDate: string
-    read: boolean
+    completed: boolean
     attachmentUrl?: string
 }

@@ -1,5 +1,5 @@
 export interface UpdateBookRequest {
     title: string
     dueDate: string
-    read: boolean
+    completed: boolean
 }
